@@ -17,4 +17,10 @@ rails db:migrate
 generisane baze: SalonVencanica_development i SalonVencanica_test.
 
 ##Uspostavljanje kontrole verzije
-Na lokalnoj masini je napravljen git repo (`git init`).
+
+Na lokalnoj masini je napravljen git repo (`git init`). Postoji i nalog na github.com.
+
+gitignore vec sadrzi master key. to je za sada dovoljno.
+
+##Generisan kostur za Appointment funkcionalnost
+
