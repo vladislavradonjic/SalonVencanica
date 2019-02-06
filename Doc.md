@@ -24,3 +24,10 @@ gitignore vec sadrzi master key. to je za sada dovoljno.
 
 ##Generisan kostur za Appointment funkcionalnost
 
+##Generisane staticke stranice _Home_, _About_, _Contact_
+Routes su promenjene tako da je home sada root, i nema /pages/ u linku.
+
+Podesen je dinamicki page tile.
+Default value je u application controlleru.
+
+Dodati linkovi za statičke stranice i zakazivanje novog termina.
