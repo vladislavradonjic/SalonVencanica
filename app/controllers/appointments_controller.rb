@@ -23,6 +23,7 @@ class AppointmentsController < ApplicationController
 
   # POST /appointments
   def create
+    @page_title = 'Salon venčanica Snežana | Zakaži termin'
     @appointment = Appointment.new(appointment_params)
 
     respond_to do |format|

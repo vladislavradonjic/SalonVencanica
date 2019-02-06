@@ -1,15 +1,25 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>SalonVencanica</title>
+    <title><%= @page_title %></title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+
+    <meta name="keywords" content="<%= @seo_keywords %>" />
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <div>
+      <div><%= link_to "Početna", root_path %></div>
+      <div><%= link_to "O nama", about_path %></div>
+      <div><%= link_to "Kontakt", contact_path %></div>
+      <div><%= link_to "Zakaži termin", new_appointment_path %></div>
+    </div>
+
     <%= yield %>
+    
   </body>
 </html>
