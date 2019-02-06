@@ -31,3 +31,5 @@ Podesen je dinamicki page tile.
 Default value je u application controlleru.
 
 Dodati linkovi za statičke stranice i zakazivanje novog termina.
+
+##Devise za autentikaciju
