@@ -32,4 +32,5 @@ Default value je u application controlleru.
 
 Dodati linkovi za statičke stranice i zakazivanje novog termina.
 
-##Devise za autentikaciju
+##Devise za autentifikaciju
+Napravljeno je tako da se log in radi sa adrese, ne postoji link na drugim stranicama sajta.
