@@ -43,4 +43,4 @@ rails g resource Dress name:string short_desc:string long_desc:text kwrds:text m
 
 Seedovani su dummy podaci za haljine.
 
-Akcije su index, new, create, edit, update.
+Akcije su index, new, create, edit, update, destroy.

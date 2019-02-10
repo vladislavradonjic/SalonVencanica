@@ -1,10 +1,11 @@
 class DressesController < ApplicationController
+	before_action :set_dress, only: [:show, :edit, :update, :destroy]
+
 	def index
 		@dresses = Dress.all
 	end
 
 	def show
-		@dress = Dress.find(params[:id])
 	end
 
 	def new
@@ -24,7 +25,6 @@ class DressesController < ApplicationController
 	end
 
 	def edit
-		@dress = Dress.find(params[:id])
 	end
 
 	def update
@@ -38,8 +38,6 @@ class DressesController < ApplicationController
 	end
 
 	def destroy
-		@dress = Dress.find(params[:id])
-
 		@dress.destroy
 		respond_to do |format|
 			format.html { redirect_to dresses_path, notice: 'Haljina je obrisana.'}
@@ -47,6 +45,10 @@ class DressesController < ApplicationController
 	end
 
 	private
+		def set_dress
+			@dress = Dress.friendly.find(params[:id])
+		end
+
 		def dress_params
 			params.require(:dress).permit(:name, 
 																		:short_desc, 
