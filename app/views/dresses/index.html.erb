@@ -1,0 +1,6 @@
+<h1>Venčanice</h1>
+
+<% @dresses.each do |dress| %>
+	<p><%= image_tag dress.main_thumb %></p>
+	<p><%= dress.name %></p>
+<% end %>

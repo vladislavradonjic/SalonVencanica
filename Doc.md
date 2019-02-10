@@ -34,3 +34,11 @@ Dodati linkovi za statičke stranice i zakazivanje novog termina.
 
 ##Devise za autentifikaciju
 Napravljeno je tako da se log in radi sa adrese, ne postoji link na drugim stranicama sajta.
+
+##Generisan resource za haljine (Dress)
+
+```
+rails g resource Dress name:string short_desc:string long_desc:text kwrds:text main_img:text main_thumb:text
+```
+
+Seedovani su dummy podaci za haljine.
