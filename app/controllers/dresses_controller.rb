@@ -37,9 +37,24 @@ class DressesController < ApplicationController
 		end
 	end
 
+	def destroy
+		@dress = Dress.find(params[:id])
+
+		@dress.destroy
+		respond_to do |format|
+			format.html { redirect_to dresses_path, notice: 'Haljina je obrisana.'}
+		end
+	end
+
 	private
 		def dress_params
-			params.require(:dress).permit(:name, :short_desc, :long_desc, :kwrds, :main_img, :main_img)
+			params.require(:dress).permit(:name, 
+																		:short_desc, 
+																		:long_desc, 
+																		:kwrds, 
+																		:main_img, 
+																		:main_img
+																		)
 		end
 
 end

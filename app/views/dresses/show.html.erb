@@ -1,4 +1,11 @@
 <h1><%= @dress.name %></h1>
 
+<p>
+	<% if current_user.is_a?(User) %>
+		<%= link_to 'Izmeni', edit_dress_path(@dress.id) %>
+		<%= link_to 'Obriši', dress_path(@dress.id), method: :delete, data: { confrim: 'Jeste li sigurni?' } %>
+	<% end %>
+</p>
+
 <p><%= image_tag @dress.main_img %></p>
 <p><%= @dress.long_desc %></p>
