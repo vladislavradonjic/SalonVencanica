@@ -1,0 +1,14 @@
+<h1>Venčanice</h1>
+
+<% if current_user.is_a?(User) %>
+  <%= link_to "Unesi novu haljinu", new_dress_path %>
+<% end %>
+
+<% @dresses.each do |dress| %>
+	<p>
+		<%= link_to dress_path(dress.id) do %>
+			<%=  image_tag dress.main_thumb %>
+		<% end %>
+	</p>
+	<p><%= link_to dress.name, dress_path(dress.id) %></p>
+<% end %>

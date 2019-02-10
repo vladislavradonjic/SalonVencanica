@@ -1,0 +1,37 @@
+<h1>Izmeni podatek o ovoj venčanici</h1>
+
+<%= form_for(@dress) do |frm| %>
+	<div class="field">
+		<%= frm.label :name %>
+		<%= frm.text_field :name %>
+	</div>
+
+	<div class="field">
+		<%= frm.label :short_desc %>
+		<%= frm.text_area :short_desc %>
+	</div>
+
+	<div class="field">
+		<%= frm.label :long_desc %>
+		<%= frm.text_area :long_desc %>
+	</div>
+
+	<div class="field">
+		<%= frm.label :kwrds %>
+		<%= frm.text_field :kwrds %>
+	</div>
+
+	<div class="field">
+		<%= frm.label :main_img %>
+		<%= frm.text_field :main_img %>
+	</div>
+
+	<div class="field">
+		<%= frm.label :main_thumb %>
+		<%= frm.text_field :main_thumb %>
+	</div>
+
+	<div class="actions">
+		<%= frm.submit %>
+	</div>
+<% end %>
