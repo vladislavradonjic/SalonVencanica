@@ -7,5 +7,11 @@
 		kwrds: "Lorem ipsum Etiam Morbi",
 		main_img: "https://via.placeholder.com/600x800",
 		main_thumb: "https://via.placeholder.com/210x280"
-	) 
+	)
+
+	5.times do |e|
+		Dress.last.dress_images.create!(
+			image: "https://via.placeholder.com/600x800"
+		)
+	end 
 end
