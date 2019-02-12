@@ -10,6 +10,7 @@ class DressesController < ApplicationController
 
 	def new
 		@dress = Dress.new
+		5.times { @dress.dress_images.build }
 	end
 
 	def create
@@ -55,7 +56,8 @@ class DressesController < ApplicationController
 																		:long_desc, 
 																		:kwrds, 
 																		:main_img, 
-																		:main_img
+																		:main_img,
+																		dress_images_attributes: [:image]
 																		)
 		end
 

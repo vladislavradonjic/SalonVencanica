@@ -9,3 +9,10 @@
 
 <p><%= image_tag @dress.main_img %></p>
 <p><%= @dress.long_desc %></p>
+
+<hr>
+
+<h2>Slike</h2>
+<% @dress.dress_images.each do |di| %>
+	<p><%= image_tag di.image %> </p>
+<% end %>

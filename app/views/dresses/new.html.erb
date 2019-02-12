@@ -31,6 +31,15 @@
 		<%= frm.text_field :main_thumb %>
 	</div>
 
+	<ul>
+		<%= frm.fields_for :dress_images do |dressimg| %>
+			<li>
+				<%= dressimg.label :image %>
+				<%= dressimg.text_field :image %>
+			</li>
+		<% end %>
+	</ul>
+
 	<div class="actions">
 		<%= frm.submit %>
 	</div>
