@@ -116,6 +116,10 @@ body {
 }
 
 .backgroundGradient {
-  background: linear-gradient(to bottom, white, WhiteSmoke);
-  color: white;
+  background: linear-gradient(to bottom, WhiteSmoke, white);
+  color: black;
+}
+
+.navbar-toggler-icon {
+  color: black;
 }

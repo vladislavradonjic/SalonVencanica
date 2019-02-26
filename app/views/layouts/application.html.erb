@@ -7,45 +7,47 @@
     <title><%= @page_title %></title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    
+
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body class="text-center backgroundGradient">
-    
-    <div class="cover-container d-flex w-120 h-100 p-3 mx-auto flex-column">
-      <header class="masthead mb-auto">
-        <div class="inner fixed-top">
 
-          <h3 class="masthead-brand text-muted">Venčanice</h3>
-          <nav class="nav nav-masthead justify-content-center ">
-            <div class="nav-link"><%= link_to "Početna", root_path, class: "text-muted" %></div>
-            <div class="nav-link"><%= link_to "O nama", about_path, class: "text-muted" %></div>
-            <div class="nav-link"><%= link_to "Kontakt", contact_path, class: "text-muted" %></div>
-            <div class="nav-link"><%= link_to "Venčanice", dresses_path, class: "text-muted" %></div>      
-            <div class="nav-link"><%= link_to "Zakažite termin", new_appointment_path, class: "text-muted" %></div>
-            <div class="nav-link">
-              <% if current_user.is_a?(User) %>
-                <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+    <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
 
-              <% end %>
-            </div>
-          </nav>
-        
+      <nav class="navbar navbar-expand-md navbar-light"
+        <h3 class="navbar-brand text-dark">Venčanice Snežana</h3>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#thisNavbar"
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="thisNavbar">
+          <div class="nav-item nav-link"><%= link_to "Početna", root_path, class: "text-muted" %></div>
+          <div class="nav-link"><%= link_to "O nama", about_path, class: "text-muted" %></div>
+          <div class="nav-link"><%= link_to "Kontakt", contact_path, class: "text-muted" %></div>
+          <div class="nav-link"><%= link_to "Venčanice", dresses_path, class: "text-muted" %></div>
+          <div class="nav-link"><%= link_to "Zakažite termin", new_appointment_path, class: "text-muted" %></div>
+          <div class="nav-link">
+            <% if current_user.is_a?(User) %>
+              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "text-muted" %>
+            <% end %>
+          </div>
         </div>
-      </header>
-    
+      </nav>
+
 
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
 
       <%= yield %>
 
-      <footer>
-        
+      <footer class="mastfoot">
+        <div class="inner">
+          <p class="app-footer">Salon venčanica Snežana 2018. Sva prava zadržana.</p>
+        </div>
       </footer>
-    
+
     </div>
+
   </body>
 </html>
