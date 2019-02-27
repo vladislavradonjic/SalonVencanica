@@ -29,7 +29,6 @@ a:hover {
 html,
 body {
   height: 100%;
-  background-color: #F5F5F5;
 }
 
 body {
@@ -123,3 +122,22 @@ body {
 .navbar-toggler-icon {
   color: black;
 }
+
+/*
+ * Background Image
+ */
+
+ #background {
+   position: fixed;
+   top: 50%;
+   left: 50%;
+   min-width: 100%;
+   min-height: 100%;
+   width: auto;
+   height: auto;
+   z-index: -100;
+   -webkit-transform: translateX(-50%) translateY(-50%);
+   transform: translateX(-50%) translateY(-50%);
+   background: image-url('wedding_bkg.jpg') no-repeat;
+   background-size: cover;
+ }
