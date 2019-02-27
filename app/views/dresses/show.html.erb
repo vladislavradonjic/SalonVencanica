@@ -1,18 +1,22 @@
-<h1><%= @dress.name %></h1>
+<main role="main">
 
-<p>
-	<% if current_user.is_a?(User) %>
-		<%= link_to 'Izmeni', edit_dress_path(@dress.id) %>
-		<%= link_to 'Obriši', dress_path(@dress.id), method: :delete, data: { confrim: 'Jeste li sigurni?' } %>
-	<% end %>
-</p>
+		<h1><%= @dress.name %></h1>
 
-<p><%= image_tag @dress.main_img %></p>
-<p><%= @dress.long_desc %></p>
+		<p>
+			<% if current_user.is_a?(User) %>
+				<%= link_to 'Izmeni', edit_dress_path(@dress.id) %>
+				<%= link_to 'Obriši', dress_path(@dress.id), method: :delete, data: { confrim: 'Jeste li sigurni?' } %>
+			<% end %>
+		</p>
 
-<hr>
+		<p><%= image_tag @dress.main_img %></p>
+		<p><%= @dress.long_desc %></p>
 
-<h2>Slike</h2>
-<% @dress.dress_images.each do |di| %>
-	<p><%= image_tag di.image %> </p>
-<% end %>
+		<hr>
+
+		<h2>Slike</h2>
+		<% @dress.dress_images.each do |di| %>
+			<p><%= image_tag di.image %> </p>
+		<% end %>
+
+</main>
