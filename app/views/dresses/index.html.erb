@@ -1,14 +1,25 @@
-<h1>Venčanice</h1>
+<main role="main">
+  <div class="album py-5 bg-light">
+    <div class="container">
+      <% if current_user.is_a?(User) %>
+        <%= link_to "Unesi novu haljinu", new_dress_path %>
+      <% end %>
+      <div class="row">
 
-<% if current_user.is_a?(User) %>
-  <%= link_to "Unesi novu haljinu", new_dress_path %>
-<% end %>
+          <% @dresses.each do |dress| %>
+            <div class="col-md-4">
+              <div class="card mb-4 shadow-sm">
+                <p>
+              		<%= link_to dress_path(dress.id) do %>
+              			<%=  image_tag dress.main_thumb, class: "card-img-top" %>
+              		<% end %>
+              	</p>
+              	<p class="card-text"><%= link_to dress.name, dress_path(dress.id), class: "card-text" %></p>
+              </div>
+            </div>
+          <% end %>
 
-<% @dresses.each do |dress| %>
-	<p>
-		<%= link_to dress_path(dress.id) do %>
-			<%=  image_tag dress.main_thumb %>
-		<% end %>
-	</p>
-	<p><%= link_to dress.name, dress_path(dress.id) %></p>
-<% end %>
+      </div>
+    </div>
+  </div>
+</main>
