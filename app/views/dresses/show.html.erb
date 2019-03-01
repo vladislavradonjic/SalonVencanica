@@ -1,22 +1,43 @@
 <main role="main">
 
-		<h1><%= @dress.name %></h1>
+	<div id="dresSlider" class="carousel slide" data-ride="carousel">
 
-		<p>
-			<% if current_user.is_a?(User) %>
-				<%= link_to 'Izmeni', edit_dress_path(@dress.id) %>
-				<%= link_to 'Obriši', dress_path(@dress.id), method: :delete, data: { confrim: 'Jeste li sigurni?' } %>
+	  <!-- Indicators -->
+	  <ul class="carousel-indicators">
+			<% @dress.dress_images.each do |di| %>
+	    	<li data-target="#dresSlider" data-slide-to=<%= "#{(di.id - 1) % @dress.dress_images.count}" %>></li>
 			<% end %>
-		</p>
+	  </ul>
 
-		<p><%= image_tag @dress.main_img %></p>
-		<p><%= @dress.long_desc %></p>
+	  <!-- The slideshow -->
+	  <div class="carousel-inner carousel-container-custom">
 
-		<hr>
+			<% @dress.dress_images.each do |di| %>
+				<div class="carousel-item active">
+					<p><%= image_tag di.image %> </p>
+				</div>
+			<% end %>
 
-		<h2>Slike</h2>
-		<% @dress.dress_images.each do |di| %>
-			<p><%= image_tag di.image %> </p>
+	  </div>
+
+	  <!-- Left and right controls -->
+	  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+	    <span class="carousel-control-prev-icon"></span>
+	  </a>
+	  <a class="carousel-control-next" href="#demo" data-slide="next">
+	    <span class="carousel-control-next-icon"></span>
+	  </a>
+
+	</div>
+
+	<h1><%= @dress.name %></h1>
+
+	<p>
+		<% if current_user.is_a?(User) %>
+			<%= link_to 'Izmeni', edit_dress_path(@dress.id) %>
+			<%= link_to 'Obriši', dress_path(@dress.id), method: :delete, data: { confrim: 'Jeste li sigurni?' } %>
 		<% end %>
+	</p>
+
 
 </main>
